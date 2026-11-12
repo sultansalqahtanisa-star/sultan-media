@@ -1,0 +1,12 @@
+<!doctype html><html dir="rtl"><head><meta charset="utf-8"><style>
+/* Native TikTok look: centered lines, each with its own rounded highlight (like the in-app "background" text style). */
+@font-face{font-family:"TT";src:url(fonts/TikTokSans.ttf);font-weight:100 900}
+@font-face{font-family:"AR";src:url(fonts/NotoSansArabic.ttf);font-weight:100 900}
+html,body{margin:0;width:1080px;height:1920px;background:transparent}
+.wrap{position:absolute;top:var(--top,420px);left:0;right:0;text-align:center;padding:0 80px}
+.t{display:inline;font:600 58px/1.62 "TT","AR","Noto Color Emoji",sans-serif;color:#fff;
+background:rgba(0,0,0,.62);padding:10px 26px;border-radius:18px;
+-webkit-box-decoration-break:clone;box-decoration-break:clone}
+</style></head><body><div class="wrap"><span class="t" id="t"></span></div>
+<script>const q=new URLSearchParams(location.search);document.getElementById('t').innerHTML=(q.get('text')||'').replace(/\n/g,'<br>');
+if(q.get('top'))document.querySelector('.wrap').style.setProperty('--top',q.get('top')+'px');</script></body></html>
